@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fizza — AI Animator & Digital Marketing Expert</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy2: #0f2040;
+    --teal: #0e9f8e;
+    --teal-light: #13c4af;
+    --gold: #e8a045;
+    --gold-light: #f5c06a;
+    --white: #ffffff;
+    --off: #f4f6f9;
+    --text: #1a1a2e;
+    --muted: #5a6478;
+    --card-bg: #ffffff;
+    --border: #e2e8f0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--off);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--navy);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--teal-light); }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 50%, #0d3352 100%);
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    border: 80px solid rgba(14,159,142,0.07);
+    top: -200px; right: -150px;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    border: 50px solid rgba(232,160,69,0.07);
+    bottom: -150px; left: -100px;
+  }
+
+  .hero-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+
+  .avatar-circle {
+    width: 110px; height: 110px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal), var(--teal-light));
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    color: white;
+    border: 4px solid rgba(255,255,255,0.15);
+    box-shadow: 0 0 40px rgba(14,159,142,0.3);
+  }
+
+  .available-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(14,159,142,0.15);
+    border: 1px solid rgba(14,159,142,0.3);
+    border-radius: 50px;
+    padding: 5px 14px;
+    font-size: 12px;
+    color: var(--teal-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .dot-pulse {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--teal-light);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    color: var(--white);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 span { color: var(--gold); }
+
+  .hero-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.65);
+    max-width: 580px;
+    margin: 0 auto 2rem;
+    font-weight: 300;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2.5rem;
+  }
+
+  .tag {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50px;
+    padding: 6px 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+    font-weight: 400;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--teal);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 13px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Outfit', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { background: var(--teal-light); transform: translateY(-1px); }
+
+  .btn-outline {
+    background: transparent;
+    color: rgba(255,255,255,0.85);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 8px;
+    padding: 13px 28px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Outfit', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-outline:hover { border-color: var(--teal-light); color: var(--teal-light); }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+  }
+
+  .stats-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1;
+  }
+
+  .stat-num span { color: var(--teal); }
+  .stat-label { font-size: 12px; color: var(--muted); margin-top: 4px; font-weight: 400; }
+
+  /* SECTIONS */
+  .section { padding: 4rem 2rem; }
+  .section-alt { background: var(--white); }
+
+  .section-inner { max-width: 900px; margin: 0 auto; }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+
+  .section-line {
+    width: 48px;
+    height: 3px;
+    background: var(--teal);
+    border-radius: 2px;
+    margin-bottom: 2rem;
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .about-highlight {
+    background: linear-gradient(135deg, var(--navy), var(--navy2));
+    border-radius: 14px;
+    padding: 1.5rem;
+    color: white;
+  }
+
+  .highlight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .highlight-item:last-child { border-bottom: none; }
+
+  .hi-icon {
+    width: 36px; height: 36px;
+    border-radius: 9px;
+    background: rgba(14,159,142,0.2);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--teal-light);
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .hi-text { font-size: 13px; color: rgba(255,255,255,0.85); }
+  .hi-label { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+
+  /* SERVICES */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .service-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    border-color: var(--teal);
+  }
+
+  .service-icon-box {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    margin-bottom: 1rem;
+  }
+
+  .ic-teal { background: rgba(14,159,142,0.1); color: var(--teal); }
+  .ic-gold { background: rgba(232,160,69,0.1); color: var(--gold); }
+  .ic-navy { background: rgba(10,22,40,0.08); color: var(--navy); }
+
+  .service-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .service-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  /* EXPERIENCE */
+  .exp-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.75rem;
+    margin-bottom: 16px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.25rem;
+    align-items: start;
+  }
+
+  .exp-logo {
+    width: 52px; height: 52px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+
+  .exp-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .exp-title { font-size: 16px; font-weight: 600; color: var(--navy); }
+  .exp-company { font-size: 13px; color: var(--teal); font-weight: 500; margin-bottom: 4px; }
+
+  .exp-period {
+    background: var(--off);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 3px 12px;
+    font-size: 11px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .exp-desc { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 10px; }
+
+  .exp-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  .exp-tag {
+    background: rgba(14,159,142,0.08);
+    color: var(--teal);
+    border-radius: 6px;
+    padding: 3px 10px;
+    font-size: 11px;
+    font-weight: 500;
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .skill-group {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem;
+  }
+
+  .skill-group-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .skill-group-title i { color: var(--teal); }
+
+  .skill-items { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .skill-chip {
+    background: var(--off);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 5px 12px;
+    font-size: 12px;
+    color: var(--text);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .skill-chip i { color: var(--teal); font-size: 12px; }
+
+  /* EDUCATION */
+  .edu-card {
+    background: linear-gradient(135deg, var(--navy), var(--navy2));
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 16px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.25rem;
+    align-items: start;
+    color: white;
+  }
+
+  .edu-icon {
+    width: 52px; height: 52px;
+    border-radius: 12px;
+    background: rgba(14,159,142,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    color: var(--teal-light);
+    flex-shrink: 0;
+  }
+
+  .edu-degree {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 4px;
+  }
+
+  .edu-uni { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 10px; }
+
+  .edu-subjects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .edu-subj {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    padding: 3px 10px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.75);
+  }
+
+  /* CERTIFICATE */
+  .cert-card {
+    background: var(--card-bg);
+    border: 2px solid var(--gold);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cert-card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 120px; height: 120px;
+    background: radial-gradient(circle, rgba(232,160,69,0.1) 0%, transparent 70%);
+  }
+
+  .cert-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .cert-badge {
+    width: 60px; height: 60px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+  }
+
+  .cert-platform {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  .cert-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  .cert-issuer { font-size: 13px; color: var(--muted); }
+
+  .cert-modules {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 1rem;
+  }
+
+  .cert-module {
+    background: rgba(232,160,69,0.06);
+    border: 1px solid rgba(232,160,69,0.2);
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 11px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .cert-module i { color: var(--gold); font-size: 11px; }
+
+  .cert-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .cert-verified {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #16a34a;
+    font-weight: 500;
+  }
+
+  /* CONTACT */
+  .contact-section {
+    background: linear-gradient(135deg, var(--navy), var(--navy2), #0d3352);
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .contact-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-section p {
+    color: rgba(255,255,255,0.6);
+    font-size: 15px;
+    margin-bottom: 2rem;
+  }
+
+  .contact-cards {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .contact-item {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255,255,255,0.85);
+    font-size: 14px;
+  }
+
+  .contact-item i { color: var(--teal-light); font-size: 18px; }
+
+  footer {
+    background: var(--navy);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  @media (max-width: 680px) {
+    .stats-inner { grid-template-columns: repeat(2,1fr); }
+    .about-grid, .services-grid, .skills-grid { grid-template-columns: 1fr; }
+    .cert-modules { grid-template-columns: repeat(2,1fr); }
+    .exp-card { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Syeda Fizza Daniyal ✦</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="available-badge">
+      <span class="dot-pulse"></span>
+      Available for Hire — Upwork & Fiverr
+    </div>
+    <div class="avatar-circle">F</div>
+    <h1>Hi, I'm <span>Syeda Fizza Daniyal</span> — AI Animator & Creative Expert</h1>
+    <p class="hero-sub">
+      I Create Pixar Style AI Animations and Viral Content · MSc Applied Mathematics · AI Content Creator · Digital Marketer · Educator
+    </p>
+    <div class="hero-tags">
+      <span class="tag">🎬 Pixar Style AI Animation</span>
+      <span class="tag">🎓 MSc Applied Mathematics</span>
+      <span class="tag">🤖 AI Content Creation</span>
+      <span class="tag">📊 Digital Marketing</span>
+      <span class="tag">🎨 Logo & Graphic Design</span>
+      <span class="tag">📚 Federal Board & Cambridge</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary"><i class="fas fa-paper-plane"></i> Hire Me on Upwork</a>
+      <a href="#services" class="btn-outline"><i class="fas fa-eye"></i> View Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div>
+      <div class="stat-num">2<span>+</span></div>
+      <div class="stat-label">Years Teaching</div>
+    </div>
+    <div>
+      <div class="stat-num">3</div>
+      <div class="stat-label">Udemy Certificates</div>
+    </div>
+    <div>
+      <div class="stat-num">8<span>+</span></div>
+      <div class="stat-label">AI Tools Mastered</div>
+    </div>
+    <div>
+      <div class="stat-num">100<span>%</span></div>
+      <div class="stat-label">Dedication</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <div class="section-title">About Me</div>
+    <div class="section-line"></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          Hi, I am <strong>Syeda Fizza Daniyal</strong> — an AI content creator, animator, and digital marketer with an <strong>M.S. in Applied Mathematics</strong>. I combine the power of AI tools with creative storytelling to deliver high-quality, viral content for businesses, educators, and creators worldwide.
+        </p>
+        <p>
+          I specialize in <strong>Pixar style 3D AI animations</strong> for kids and education, YouTube scripts, thumbnails, and viral video editing. With 2+ years of teaching experience at The Educators (Federal Board & Cambridge), I also create math worksheets and educational content.
+        </p>
+        <p>
+          Fast delivery. High quality. Let us create something great together. I am certified in Digital Marketing, AI tools, and Network Security through Udemy — always staying ahead of the curve.
+        </p>
+      </div>
+      <div class="about-highlight">
+        <div class="highlight-item">
+          <div class="hi-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div>
+            <div class="hi-text">MSc Applied Mathematics</div>
+            <div class="hi-label">Postgraduate Degree</div>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="hi-icon"><i class="fas fa-film"></i></div>
+          <div>
+            <div class="hi-text">Pixar Style AI Animation</div>
+            <div class="hi-label">Kids & Educational Content</div>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="hi-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+          <div>
+            <div class="hi-text">The Educators — 2 Years</div>
+            <div class="hi-label">Federal Board & Cambridge</div>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="hi-icon"><i class="fas fa-certificate"></i></div>
+          <div>
+            <div class="hi-text">3 Udemy Certifications</div>
+            <div class="hi-label">Marketing · AI · Cybersecurity</div>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="hi-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <div class="hi-text">Karachi, Pakistan</div>
+            <div class="hi-label">Available Remotely Worldwide</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section section-alt" id="services">
+  <div class="section-inner">
+    <div class="section-title">Services I Offer</div>
+    <div class="section-line"></div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon-box ic-teal"><i class="fas fa-film"></i></div>
+        <h3>Pixar Style AI Animation</h3>
+        <p>Stunning Pixar-style 3D AI animations for kids content, educational videos, YouTube channels, and storytelling using cutting-edge AI tools.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-box ic-gold"><i class="fas fa-youtube"></i></div>
+        <h3>YouTube Scripts & Thumbnails</h3>
+        <p>Viral YouTube scripts, eye-catching thumbnail design, and full video editing to grow your channel and maximize views and engagement.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-box ic-navy"><i class="fas fa-paint-brush"></i></div>
+        <h3>Logo & Graphic Design</h3>
+        <p>Professional logos, brand identities, social media graphics, and visual content using Canva and AI-powered design tools.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-box ic-teal"><i class="fas fa-pen-nib"></i></div>
+        <h3>Copywriting & Blog Writing</h3>
+        <p>Persuasive copywriting, SEO blog posts, social media captions, and content strategy that drives traffic, engagement, and conversions.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-box ic-gold"><i class="fas fa-square-root-alt"></i></div>
+        <h3>Math Worksheets & Tutoring</h3>
+        <p>Custom math worksheets, activities, and online tutoring for Federal Board and Cambridge O/A-Level students with proven results.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-box ic-navy"><i class="fas fa-chart-line"></i></div>
+        <h3>Digital Marketing</h3>
+        <p>Full digital marketing services including SEO, social media marketing, email campaigns, Facebook Ads, and Google Ads strategy.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-box ic-teal"><i class="fas fa-robot"></i></div>
+        <h3>AI Video Production</h3>
+        <p>Professional AI avatar videos, explainer animations, and viral reels using HeyGen, CapCut, ChatGPT, and Gemini AI tools.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-box ic-gold"><i class="fas fa-keyboard"></i></div>
+        <h3>Data Entry Services</h3>
+        <p>Accurate and fast data entry, Excel spreadsheet management, PDF to Word conversion, and database organization services.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-box ic-navy"><i class="fas fa-share-alt"></i></div>
+        <h3>Social Media Content</h3>
+        <p>Complete social media content creation — posts, reels, stories, and captions for Instagram, Facebook, TikTok, and LinkedIn.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
+  <div class="section-inner">
+    <div class="section-title">Work Experience</div>
+    <div class="section-line"></div>
+
+    <div class="exp-card">
+      <div class="exp-logo ic-teal" style="background:rgba(14,159,142,0.1); color:var(--teal); border-radius:12px; width:52px; height:52px; display:flex; align-items:center; justify-content:center; font-size:22px;">
+        <i class="fas fa-chalkboard-teacher"></i>
+      </div>
+      <div>
+        <div class="exp-top">
+          <div>
+            <div class="exp-title">Mathematics Teacher</div>
+            <div class="exp-company">The Educators — Karachi, Pakistan</div>
+          </div>
+          <span class="exp-period">2023 – 2025</span>
+        </div>
+        <p class="exp-desc">
+          Delivered high-quality Mathematics instruction to students from Grade 6 through Grade 12 across Federal Board and Cambridge (CAIE) curricula. Planned structured lessons, prepared students for board exams through past paper practice, and maintained strong student pass rates. Adapted teaching strategies to diverse learning styles and built a positive, engaging classroom environment.
+        </p>
+        <div class="exp-tags">
+          <span class="exp-tag">Federal Board</span>
+          <span class="exp-tag">Cambridge CAIE</span>
+          <span class="exp-tag">O-Level</span>
+          <span class="exp-tag">A-Level</span>
+          <span class="exp-tag">Matric & Inter</span>
+          <span class="exp-tag">Exam Prep</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-logo" style="background:rgba(232,160,69,0.1); color:var(--gold); border-radius:12px; width:52px; height:52px; display:flex; align-items:center; justify-content:center; font-size:22px;">
+        <i class="fas fa-robot"></i>
+      </div>
+      <div>
+        <div class="exp-top">
+          <div>
+            <div class="exp-title">AI Content Creator & Freelancer</div>
+            <div class="exp-company">Freelance — Remote / Online</div>
+          </div>
+          <span class="exp-period">2024 – Present</span>
+        </div>
+        <p class="exp-desc">
+          Working as an independent AI content creator specializing in video production, animation, script writing, logo design, and web development. Using HeyGen for AI avatar videos, CapCut for editing, Canva for design, and ChatGPT/Gemini for content strategy. Serving clients across education, business, and social media niches.
+        </p>
+        <div class="exp-tags">
+          <span class="exp-tag">HeyGen</span>
+          <span class="exp-tag">CapCut</span>
+          <span class="exp-tag">Canva</span>
+          <span class="exp-tag">ChatGPT</span>
+          <span class="exp-tag">Gemini</span>
+          <span class="exp-tag">Flow AI</span>
+          <span class="exp-tag">Script Writing</span>
+          <span class="exp-tag">Web Dev</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section section-alt" id="skills">
+  <div class="section-inner">
+    <div class="section-title">Skills & Tools</div>
+    <div class="section-line"></div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-title"><i class="fas fa-robot"></i> AI & Content Tools</div>
+        <div class="skill-items">
+          <span class="skill-chip"><i class="fas fa-check"></i> HeyGen</span>
+          <span class="skill-chip"><i class="fas fa-check"></i> ChatGPT</span>
+          <span class="skill-chip"><i class="fas fa-check"></i> Gemini</span>
+          <span class="skill-chip"><i class="fas fa-check"></i> Flow AI</span>
+          <span class="skill-chip"><i class="fas fa-check"></i> Midjourney</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title"><i class="fas fa-video"></i> Video & Design</div>
+        <div class="skill-items">
+          <span class="skill-chip"><i class="fas fa-check"></i> CapCut</span>
+          <span class="skill-chip"><i class="fas fa-check"></i> Canva</span>
+          <span class="skill-chip"><i class="fas fa-check"></i> AI Animation</span>
+          <span class="skill-chip"><i class="fas fa-check"></i> Logo Design</span>
+          <span class="skill-chip"><i class="fas fa-check"></i> Thumbnails</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title"><i class="fas fa-globe"></i> Web & Marketing</div>
+        <div class="skill-items">
+          <span class="skill-chip"><i class="fas fa-check"></i> Web Development</span>
+          <span class="skill-chip"><i class="fas fa-check"></i> SEO</span>
+          <span class="skill-chip"><i class="fas fa-check"></i> Social Media</span>
+          <span class="skill-chip"><i class="fas fa-check"></i> Email Marketing</span>
+          <span class="skill-chip"><i class="fas fa-check"></i> Content Strategy</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title"><i class="fas fa-graduation-cap"></i> Teaching</div>
+        <div class="skill-items">
+          <span class="skill-chip"><i class="fas fa-check"></i> Applied Mathematics</span>
+          <span class="skill-chip"><i class="fas fa-check"></i> Federal Board</span>
+          <span class="skill-chip"><i class="fas fa-check"></i> Cambridge CAIE</span>
+          <span class="skill-chip"><i class="fas fa-check"></i> Curriculum Design</span>
+          <span class="skill-chip"><i class="fas fa-check"></i> Exam Prep</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section" id="education">
+  <div class="section-inner">
+    <div class="section-title">Education</div>
+    <div class="section-line"></div>
+
+    <div class="edu-card">
+      <div class="edu-icon"><i class="fas fa-university"></i></div>
+      <div>
+        <div class="edu-degree">Master of Science — Applied Mathematics</div>
+        <div class="edu-uni">University · Pakistan &nbsp;|&nbsp; 2021 – 2023</div>
+        <div class="edu-subjects">
+          <span class="edu-subj">Differential Equations</span>
+          <span class="edu-subj">Linear Algebra</span>
+          <span class="edu-subj">Numerical Analysis</span>
+          <span class="edu-subj">Statistics & Probability</span>
+          <span class="edu-subj">Mathematical Modeling</span>
+          <span class="edu-subj">Mathematical Physics</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="edu-card" style="background: linear-gradient(135deg, #0d3352, #0f2040);">
+      <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+      <div>
+        <div class="edu-degree">Bachelor of Science — Mathematics</div>
+        <div class="edu-uni">University · Pakistan &nbsp;|&nbsp; 2018 – 2021</div>
+        <div class="edu-subjects">
+          <span class="edu-subj">Calculus</span>
+          <span class="edu-subj">Pure Mathematics</span>
+          <span class="edu-subj">Applied Mathematics</span>
+          <span class="edu-subj">Statistics</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATE -->
+<section class="section section-alt" id="certifications">
+  <div class="section-inner">
+    <div class="section-title">Certifications</div>
+    <div class="section-line"></div>
+
+    <div class="cert-card">
+      <div class="cert-top">
+        <div class="cert-badge">🎓</div>
+        <div>
+          <div class="cert-platform">Udemy — Verified Certificate</div>
+          <div class="cert-name">The Complete Digital Marketing Course — 12 Courses in 1</div>
+          <div class="cert-issuer">Issued by Udemy &nbsp;·&nbsp; Instructors: Rob Percival & Daragh Walsh &nbsp;·&nbsp; 2025</div>
+        </div>
+      </div>
+      <div class="cert-modules">
+        <div class="cert-module"><i class="fas fa-check-circle"></i> SEO</div>
+        <div class="cert-module"><i class="fas fa-check-circle"></i> YouTube Marketing</div>
+        <div class="cert-module"><i class="fas fa-check-circle"></i> Facebook Ads</div>
+        <div class="cert-module"><i class="fas fa-check-circle"></i> Google Ads</div>
+        <div class="cert-module"><i class="fas fa-check-circle"></i> Email Marketing</div>
+        <div class="cert-module"><i class="fas fa-check-circle"></i> Social Media Mktg</div>
+        <div class="cert-module"><i class="fas fa-check-circle"></i> WordPress</div>
+        <div class="cert-module"><i class="fas fa-check-circle"></i> App Marketing</div>
+        <div class="cert-module"><i class="fas fa-check-circle"></i> Content Marketing</div>
+        <div class="cert-module"><i class="fas fa-check-circle"></i> Twitter Marketing</div>
+        <div class="cert-module"><i class="fas fa-check-circle"></i> Copywriting</div>
+        <div class="cert-module"><i class="fas fa-check-circle"></i> Google Analytics</div>
+      </div>
+      <div class="cert-footer">
+        <div class="cert-verified"><i class="fas fa-check-circle"></i> Certificate Verified — Udemy</div>
+        <span style="font-size:12px; color:var(--muted);">2025</span>
+      </div>
+    </div>
+
+    <div class="cert-card" style="margin-top:16px;">
+      <div class="cert-top">
+        <div class="cert-badge">🤖</div>
+        <div>
+          <div class="cert-platform">Udemy — Verified Certificate</div>
+          <div class="cert-name">ChatGPT 5 & AI Agents in 60 Minutes [2026]</div>
+          <div class="cert-issuer">Issued by Udemy &nbsp;·&nbsp; 2026</div>
+        </div>
+      </div>
+      <div class="cert-modules">
+        <div class="cert-module"><i class="fas fa-check-circle"></i> ChatGPT 5 Mastery</div>
+        <div class="cert-module"><i class="fas fa-check-circle"></i> AI Agents</div>
+        <div class="cert-module"><i class="fas fa-check-circle"></i> Prompt Engineering</div>
+        <div class="cert-module"><i class="fas fa-check-circle"></i> AI Automation</div>
+        <div class="cert-module"><i class="fas fa-check-circle"></i> Workflow AI</div>
+        <div class="cert-module"><i class="fas fa-check-circle"></i> AI Productivity</div>
+      </div>
+      <div class="cert-footer">
+        <div class="cert-verified"><i class="fas fa-check-circle"></i> Certificate Verified — Udemy</div>
+        <span style="font-size:12px; color:var(--muted);">2026</span>
+      </div>
+    </div>
+
+    <div class="cert-card" style="margin-top:16px; border-color: #e83a3a;">
+      <div class="cert-top">
+        <div class="cert-badge" style="background: linear-gradient(135deg, #e83a3a, #ff6b6b);">🔐</div>
+        <div>
+          <div class="cert-platform" style="color:#e83a3a;">Udemy — Verified Certificate</div>
+          <div class="cert-name">Complete Network Hacking Course 2026 — Beginner to Advanced</div>
+          <div class="cert-issuer">Issued by Udemy &nbsp;·&nbsp; 2026</div>
+        </div>
+      </div>
+      <div class="cert-modules">
+        <div class="cert-module" style="background:rgba(232,58,58,0.06); border-color:rgba(232,58,58,0.2);"><i class="fas fa-check-circle" style="color:#e83a3a;"></i> Network Security</div>
+        <div class="cert-module" style="background:rgba(232,58,58,0.06); border-color:rgba(232,58,58,0.2);"><i class="fas fa-check-circle" style="color:#e83a3a;"></i> Ethical Hacking</div>
+        <div class="cert-module" style="background:rgba(232,58,58,0.06); border-color:rgba(232,58,58,0.2);"><i class="fas fa-check-circle" style="color:#e83a3a;"></i> Penetration Testing</div>
+        <div class="cert-module" style="background:rgba(232,58,58,0.06); border-color:rgba(232,58,58,0.2);"><i class="fas fa-check-circle" style="color:#e83a3a;"></i> WiFi Security</div>
+        <div class="cert-module" style="background:rgba(232,58,58,0.06); border-color:rgba(232,58,58,0.2);"><i class="fas fa-check-circle" style="color:#e83a3a;"></i> Cybersecurity Tools</div>
+        <div class="cert-module" style="background:rgba(232,58,58,0.06); border-color:rgba(232,58,58,0.2);"><i class="fas fa-check-circle" style="color:#e83a3a;"></i> Advanced Hacking</div>
+      </div>
+      <div class="cert-footer">
+        <div class="cert-verified" style="color:#e83a3a;"><i class="fas fa-check-circle"></i> Certificate Verified — Udemy</div>
+        <span style="font-size:12px; color:var(--muted);">2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <h2>Let's Work Together</h2>
+  <p>Available for freelance projects, tutoring & content creation worldwide</p>
+  <div class="contact-cards">
+    <div class="contact-item">
+      <i class="fas fa-map-marker-alt"></i>
+      Karachi, Pakistan
+    </div>
+    <div class="contact-item">
+      <i class="fas fa-globe"></i>
+      Available Remotely
+    </div>
+    <div class="contact-item">
+      <i class="fab fa-upwork" style="color:var(--teal-light);"></i>
+      Upwork Freelancer
+    </div>
+  </div>
+  <a href="mailto:youremail@gmail.com" class="btn-primary" style="display:inline-flex; margin:0 auto;">
+    <i class="fas fa-envelope"></i> Get In Touch
+  </a>
+</section>
+
+<footer>
+  &copy; 2026 · Syeda Fizza Daniyal · AI Animator & Digital Marketing Expert · Karachi, Pakistan
+</footer>
+
+</body>
+</html>
